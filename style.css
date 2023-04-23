@@ -1,10 +1,16 @@
 body, html {
   height: 100%;
   margin: 0;
+  width: 100%;
+  text-align: center;
 }
+
+
 svg {
   max-height: 100%;
 }
+
+
 
 #Donut{
 	transform-origin: 1054.33px 1055.80px;
