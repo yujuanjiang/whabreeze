@@ -1,0 +1,104 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+svg {
+  max-height: 100%;
+}
+
+
+
+#Donut{
+	transform-origin: 1054.33px 1055.80px;
+	animation-name: scale-float;
+	animation-duration: 6s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+#Whale{
+	transform-origin: 1054.33px 1055.80px;
+	animation-name: swim;
+	animation-duration: 30s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+#Birds{
+	transform-origin: 1368.75px 1379.027px;
+	animation-name: flying;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+#Ripple-01, #Ripple-02, #Ripple-03{
+	transform-origin: 1054.33px 1055.80px;
+	animation-name: ripple-scale;
+	animation-duration: 6s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+}
+
+#Ripple-02{
+	animation-delay: 2s;
+}
+
+#Ripple-03{
+	animation-delay: 4s;
+}
+
+@keyframes ripple-scale{
+	0%{
+		transform: scale(1);
+		opacity: 1;
+	}
+	100%{
+		transform: scale(3.2);
+		opacity: 0;
+	}
+}
+
+@keyframes scale-float{
+	0%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+
+@keyframes swim{
+	0%{
+		tramsform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes flying{
+	0%{
+		transform: translate(0px, 0px);
+		opacity: 0;
+	}
+	25%{
+			transform: translate(-250px, -300px);
+			opacity: 1;
+		}
+	50%{
+			transform: translate(-500px, -600px);
+			opacity: 0;
+		}
+	100%{
+			transform: translate(0px, 0px);
+			opacity: 0;
+		}
+}
