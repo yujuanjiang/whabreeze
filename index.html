@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <title>Relaxer</title>
   </head>
@@ -12,34 +11,28 @@
 
     <p id="text"></p>
     <div class="container" id="container">
-
-
-      <audio class="audio_in">
-          <source src="./static/breathin.mp3" />
-      </audio>
-      <audio class="song">
+      <audio class="bgm">
           <source src="./static/bgm.mp3" />
       </audio>
-      <audio class="audio_start">
-          <source src="./static/start.m4a" />
+      <audio class="breathin">
+          <source src="./static/breathin.mp3" />
       </audio>
-      <audio class="audio_hold">
-          <source src="./static/hold.m4a" />
-      </audio>
-      <audio class="audio_out">
+      <audio class="breathout">
           <source src="./static/breathout.m4a" />
+      </audio>
+      <audio class="hold">
+          <source src="./static/hold.m4a" />
       </audio>
 
       <div class="circle"></div>
 
       <img src="./img/play.svg" class="play"></img>
+
       <div class="pointer-container">
         <span class="pointer"></span>
       </div>
-
       <div class="gradient-circle"></div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

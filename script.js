@@ -1,92 +1,67 @@
-const container = document.getElementById('container');
+const container = document.getElementById("container");
+const text = document.getElementById("text");
 const pointer = document.querySelector('.pointer-container');
 
-const text = document.getElementById('text');
-const song = document.querySelector(".song");
-const audio_start = document.querySelector(".audio_start");
-const audio_in = document.querySelector(".audio_in");
-const audio_hold = document.querySelector(".audio_hold");
-const audio_out = document.querySelector(".audio_out");
+const audio_bgm = document.querySelector(".bgm");
+const audio_in = document.querySelector(".breathin");
+const audio_out = document.querySelector(".breathout");
+const audio_hold = document.querySelector(".hold");
 
-const play = document.querySelector(".play");
 
-let totalTime = 19000;
-let breatheInTime = 4000;
-let holdTime = 7000;
-let breatheOutTime = 8000;
-
-let intervalID;
-
-//song.pause();  // Initial status
-song.loop = "True";
-song.pause();
+// The 4-7-8 breathing technique: https://www.medicalnewstoday.com/articles/324417
+const totalTime = 19000;
+const breatheTime = 4000;
+const holdTime = 7000;
 pointer.style.animationPlayState = 'paused';
 
-
-//breathAnimation();
-
+const play = document.querySelector(".play");
 play.addEventListener("click", function() {
-  checkPlaying(song);
+  init();
 });
 
-const checkPlaying = song => {
-  if (song.paused) {
-    intervalID = setInterval( breathAnimation, 19000 );
-    console.log("Inside play function");
-    console.log(intervalID);
-    song.play();
-    pointer.style.animationPlayState = 'running';
-    play.src = "./img/pause.svg";
-    //container.play();
-
-  } else {
-    song.pause();
-    pointer.style.animationPlayState = 'paused';
-    container.style.animationPlayState = 'paused';
-    play.src = "./img/play.svg";
-    //container.classList.remove("pause")
-    //container.pause();
-    console.log("Inside pause function");
-    console.log(intervalID);
-    clearInterval(intervalID);
-  }
-};
-
-
-function breathAnimation() {
-  audio_out.currentTime = 0;
-  audio_out.pause();
-
+function breatheAnimation() {
+  text.innerText = "吸气!";
+  container.className = "container grow";
   audio_in.play();
 
-  console.log("Breathing in...");
-  text.innerText = 'Breathe In!';
-  container.className = 'container grow';
-
   setTimeout(() => {
-
-    audio_in.currentTime = 0;
+    text.innerText = "屏住呼吸";
     audio_hold.play();
-    audio_in.pause();
-
-    console.log("Holding...");
-    text.innerText = 'Hold';
-
+    //audio_in.currentTime = 0;
 
     setTimeout(() => {
 
-      audio_hold.currentTime = 0;
-      audio_hold.pause();
-      console.log("Breathing out...");
-
+      text.innerText = "呼气!";
       audio_out.play();
-      text.innerText = 'Breathe Out!';
-      container.className = 'container shrink';
+
+      container.className = "container shrink";
 
     }, holdTime);
 
-  }, breatheInTime);
+  }, breatheTime);
+
 }
 
 
-//audio_start.play();
+
+function init() {
+
+    if (pointer.style.animationPlayState == "paused" ) {
+
+      sessionID = setInterval(breatheAnimation, totalTime);
+      // Init
+      breatheAnimation();
+      pointer.style.animationPlayState = 'running';
+      play.src = "./img/pause.svg";
+      audio_bgm.play();
+
+
+    }else{
+        clearInterval(sessionID);
+        window.location.reload(); // Refresh the entire page
+        // container.style.animation = 'none';
+        // text.innerText = "";
+        // pointer.style.animationPlayState = 'paused';
+    }
+
+}
