@@ -20,6 +20,11 @@ play.addEventListener("click", function() {
 });
 
 function breatheAnimation() {
+
+  audio_in.currentTime = 0;
+  audio_hold.currentTime = 0;
+  audio_out.currentTime = 0;
+
   text.innerText = "吸气!";
   container.className = "container grow";
   audio_hold.play();
@@ -27,7 +32,6 @@ function breatheAnimation() {
   setTimeout(() => {
     text.innerText = "屏住呼吸";
     audio_hold.play();
-    //audio_in.currentTime = 0;
 
     setTimeout(() => {
 
