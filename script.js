@@ -24,7 +24,7 @@ function breatheAnimation() {
   //audio_in.currentTime = 0;
   //audio_hold.currentTime = 0;
   //audio_out.currentTime = 0;
-  alert("Breach in!");
+  console.log("Breach in!");
   text.innerText = "吸气!";
   container.className = "container grow";
   audio_in.play();
@@ -34,14 +34,14 @@ function breatheAnimation() {
     text.innerText = "屏住呼吸";
     audio_hold.play();
 
-    alert("Hold!");
+    console.log("Hold!");
     window.setTimeout(() => {
 
       text.innerText = "呼气!";
       audio_out.play();
 
       container.className = "container shrink";
-      alert("Breach out!");
+      console.log("Breach out!");
     }, holdTime);
 
   }, breatheTime);
