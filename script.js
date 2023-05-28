@@ -6,7 +6,7 @@ const audio_bgm = document.querySelector(".bgm");
 const audio_in = document.querySelector(".breathin");
 const audio_out = document.querySelector(".breathout");
 const audio_hold = document.querySelector(".hold");
-
+audio_bgm.loop = true;
 
 // The 4-7-8 breathing technique: https://www.medicalnewstoday.com/articles/324417
 const totalTime = 19000;
