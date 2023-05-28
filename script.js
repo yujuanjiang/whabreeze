@@ -8,6 +8,8 @@ const audio_out = document.querySelector(".breathout");
 const audio_hold = document.querySelector(".hold");
 audio_bgm.loop = true;
 
+const soundEffect = new Audio();
+
 // The 4-7-8 breathing technique: https://www.medicalnewstoday.com/articles/324417
 const totalTime = 19000;
 const breatheTime = 4000;
@@ -27,19 +29,25 @@ function breatheAnimation() {
   //console.log("Breach in!");
   text.innerText = "吸气!";
   container.className = "container grow";
-  audio_in.play();
+  //audio_in.play();
+  soundEffect.src = "./static/breathin.mp3";
+  soundEffect.play();
 
   //sleep(4000);
   window.setTimeout(() => {
 
     text.innerText = "屏住呼吸";
-    audio_hold.play();
-    container.className = "container shrink";
+    //audio_hold.play();
+
+    soundEffect.src = "./static/hold.mp3";
+    soundEffect.play();
 
     window.setTimeout(() => {
 
       text.innerText = "呼气!";
-      audio_out.play();
+      //audio_out.play();
+      soundEffect.src = "./static/breathout.mp3";
+      soundEffect.play();
       container.className = "container shrink";
 
     }, holdTime);
