@@ -26,30 +26,30 @@ function breatheAnimation() {
 
   //audio_in.currentTime = 0;
   //console.log("Breach in!");
-  audio_in.muted = false;
-  audio_in.play();
+  //audio_in.muted = false;
+  //audio_in.play();
   //audio_out.currentTime = 0;
-  //soundEffect.src = "./static/breathin.mp3";
-  //soundEffect.play();
+  soundEffect.src = "./static/breathin.mp3";
+  soundEffect.play();
   text.innerText = "吸气!";
   container.className = "container grow";
 
   window.setTimeout(() => {
 
-    //soundEffect.src = "./static/hold.mp3";
-    //soundEffect.play();
+    soundEffect.src = "./static/hold.mp3";
+    soundEffect.play();
     text.innerText = "屏住呼吸";
-    audio_hold.muted = false;
-    audio_hold.play();
+    //audio_hold.muted = false;
+    //audio_hold.play();
     //audio_in.currentTime = 0;
 
     window.setTimeout(() => {
 
-      //soundEffect.src = "./static/breathout.mp3";
-      //soundEffect.play();
+      soundEffect.src = "./static/breathout.mp3";
+      soundEffect.play();
       text.innerText = "呼气!";
-      audio_out.muted = false;
-      audio_out.play();
+      //audio_out.muted = false;
+      //audio_out.play();
       //audio_hold.currentTime = 0;
       container.className = "container shrink";
 
@@ -64,12 +64,17 @@ function breatheAnimation() {
 function init() {
 
     if (pointer.style.animationPlayState == "paused" ) {
-      // Init
-      breatheAnimation();
-      setInterval(breatheAnimation, totalTime);
+
       pointer.style.animationPlayState = 'running';
       play.src = "./img/pause.svg";
       audio_bgm.play();
+      soundEffect.src = "./static/breathin.mp3";
+      soundEffect.play(1);
+      soundEffect.pause();
+
+      // Init
+      breatheAnimation();
+      setInterval(breatheAnimation, totalTime);
 
     }else{
 
