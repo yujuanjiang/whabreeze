@@ -55,6 +55,7 @@ function init() {
 
     if (pointer.style.animationPlayState == "paused" ) {
 
+      sleep(1000);
       sessionID = setInterval(breatheAnimation, totalTime);
       // Init
       breatheAnimation();
