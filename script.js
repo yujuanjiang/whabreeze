@@ -54,9 +54,7 @@ function breatheAnimation() {
 function init() {
 
     if (pointer.style.animationPlayState == "paused" ) {
-
-      sleep(1000);
-      sessionID = setInterval(breatheAnimation, totalTime);
+      setInterval(breatheAnimation, totalTime);
       // Init
       breatheAnimation();
       pointer.style.animationPlayState = 'running';
@@ -64,11 +62,9 @@ function init() {
       audio_bgm.play();
 
     }else{
-        clearInterval(sessionID);
+
         window.location.reload(); // Refresh the entire page
         // container.style.animation = 'none';
-        // text.innerText = "";
-        // pointer.style.animationPlayState = 'paused';
     }
 
 }
