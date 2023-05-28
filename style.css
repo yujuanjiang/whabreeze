@@ -29,9 +29,14 @@ body {
 
 h1 {
   position: absolute;
-  top: 1rem;
+  top: 2rem;
   left: 2rem;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+}
+
+p {
+  margin-top: 1em;
+  font-size: 2.5rem;
 }
 
 .container {
@@ -39,10 +44,10 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: auto;
-  width: 180px;
-  height: 180px;
+  width: 300px;
+  height: 300px;
   position: relative;
-  transform: scale(1);
+  transform: scale(0.8);
 }
 
 .circle {
@@ -107,10 +112,10 @@ h1 {
 
 @keyframes grow {
   from {
-    transform: scale(1);
+    transform: scale(0.8);
   }
   to {
-    transform: scale(1.2);
+    transform: scale(1);
   }
 }
 
@@ -120,9 +125,9 @@ h1 {
 
 @keyframes shrink {
   from {
-    transform: scale(1.2);
+    transform: scale(1);
   }
   to {
-    transform: scale(1);
+    transform: scale(0.8);
   }
 }
