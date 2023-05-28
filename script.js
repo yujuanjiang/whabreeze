@@ -21,25 +21,27 @@ play.addEventListener("click", function() {
 
 function breatheAnimation() {
 
-  audio_in.currentTime = 0;
-  audio_hold.currentTime = 0;
-  audio_out.currentTime = 0;
-
+  //audio_in.currentTime = 0;
+  //audio_hold.currentTime = 0;
+  //audio_out.currentTime = 0;
+  alert("Breach in!");
   text.innerText = "吸气!";
   container.className = "container grow";
-  audio_hold.play();
+  audio_in.play();
 
-  setTimeout(() => {
+  //sleep(4000);
+  window.setTimeout(() => {
     text.innerText = "屏住呼吸";
     audio_hold.play();
 
-    setTimeout(() => {
+    alert("Hold!");
+    window.setTimeout(() => {
 
       text.innerText = "呼气!";
       audio_out.play();
 
       container.className = "container shrink";
-
+      alert("Breach out!");
     }, holdTime);
 
   }, breatheTime);
