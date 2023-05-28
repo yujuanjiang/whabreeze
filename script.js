@@ -22,7 +22,7 @@ play.addEventListener("click", function() {
 function breatheAnimation() {
   text.innerText = "吸气!";
   container.className = "container grow";
-  audio_in.play();
+  audio_hold.play();
 
   setTimeout(() => {
     text.innerText = "屏住呼吸";
