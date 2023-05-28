@@ -3,9 +3,6 @@ const text = document.getElementById("text");
 const pointer = document.querySelector('.pointer-container');
 
 const audio_bgm = document.querySelector(".bgm");
-const audio_in = document.querySelector(".breathin");
-const audio_out = document.querySelector(".breathout");
-const audio_hold = document.querySelector(".hold");
 audio_bgm.loop = true;
 
 const soundEffect = new Audio();
@@ -24,30 +21,26 @@ play.addEventListener("click", function() {
 function breatheAnimation() {
 
   //audio_in.currentTime = 0;
-  //audio_hold.currentTime = 0;
-  //audio_out.currentTime = 0;
   //console.log("Breach in!");
-  text.innerText = "吸气!";
-  container.className = "container grow";
   //audio_in.play();
   soundEffect.src = "./static/breathin.mp3";
   soundEffect.play();
+  text.innerText = "吸气!";
+  container.className = "container grow";
 
-  //sleep(4000);
   window.setTimeout(() => {
-
-    text.innerText = "屏住呼吸";
-    //audio_hold.play();
 
     soundEffect.src = "./static/hold.mp3";
     soundEffect.play();
+    text.innerText = "屏住呼吸";
+    //audio_hold.play();
 
     window.setTimeout(() => {
 
-      text.innerText = "呼气!";
-      //audio_out.play();
       soundEffect.src = "./static/breathout.mp3";
       soundEffect.play();
+      text.innerText = "呼气!";
+      //audio_out.play();
       container.className = "container shrink";
 
     }, holdTime);
@@ -68,7 +61,6 @@ function init() {
       pointer.style.animationPlayState = 'running';
       play.src = "./img/pause.svg";
       audio_bgm.play();
-
 
     }else{
         clearInterval(sessionID);
