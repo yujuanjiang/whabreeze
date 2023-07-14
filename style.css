@@ -39,6 +39,12 @@ p {
   font-size: 2.5rem;
 }
 
+p2 {
+  margin-top: 1.5em;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 .container {
   display: flex;
   align-items: center;
