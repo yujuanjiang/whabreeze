@@ -1,5 +1,6 @@
 const container = document.getElementById("container");
 const text = document.getElementById("text");
+const start = document.getElementById("start");
 const pointer = document.querySelector('.pointer-container');
 
 const audio_bgm = document.querySelector(".bgm");
@@ -20,6 +21,7 @@ pointer.style.animationPlayState = 'paused';
 const play = document.querySelector(".play");
 play.addEventListener("click", function() {
   init();
+  start.innerText = "";
 });
 
 function breatheAnimation() {
@@ -80,6 +82,7 @@ function init() {
 
         window.location.reload(); // Refresh the entire page
         // container.style.animation = 'none';
+        start.innerText = "点击下方按钮<br>开始练习";
     }
 
 }
