@@ -14,7 +14,10 @@ const numUsers = document.getElementById("numUsers");
 
 const soundEffect = new Audio();
 
-numUsers.innerText = "当前在线人数：".concat( Math.floor( Math.random() * 10 ) + 300 );
+const d = new Date();
+let seconds = d.getSeconds()%10;
+//numUsers.innerText = "当前在线人数：".concat( Math.floor( Math.random() * 10 ) + 300 ); #Generate a randome number
+numUsers.innerText = "当前在线人数：".concat( seconds + 300 );
 
 // The 4-7-8 breathing technique: https://www.medicalnewstoday.com/articles/324417
 const totalTime = 19000;
@@ -79,7 +82,7 @@ function init() {
       var duration = document.getElementById("idTimer").value*60*1000;
       //alert(duration);
       countDown(duration);
-      
+
       // Init
       breatheAnimation();
       setInterval(breatheAnimation, totalTime);
