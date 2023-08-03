@@ -33,6 +33,7 @@ play.addEventListener("click", function() {
 
 function countDown(duration) {
     setInterval(() => { window.location.reload(); }, duration);
+    document.getElementById("idTimer").disabled=true;
 }
 
 function breatheAnimation() {
