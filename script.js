@@ -9,8 +9,12 @@ const audio_in = document.querySelector(".breathin");
 const audio_hold = document.querySelector(".hold");
 const audio_out = document.querySelector(".breathout");
 
+const duration = document.getElementById("timerDuration");
+const numUsers = document.getElementById("numUsers");
+
 const soundEffect = new Audio();
 
+numUsers.innerText = "当前在线人数：".concat( Math.floor( Math.random() * 10 ) + 300 );
 
 // The 4-7-8 breathing technique: https://www.medicalnewstoday.com/articles/324417
 const totalTime = 19000;
@@ -20,9 +24,13 @@ pointer.style.animationPlayState = 'paused';
 
 const play = document.querySelector(".play");
 play.addEventListener("click", function() {
-  init();
   start.innerText = "";
+  init();
 });
+
+function countDown(duration) {
+    setInterval(() => { window.location.reload(); }, duration);
+}
 
 function breatheAnimation() {
 
@@ -46,7 +54,6 @@ function breatheAnimation() {
     //audio_in.currentTime = 0;
 
     window.setTimeout(() => {
-
       soundEffect.src = "./static/breathout.mp3";
       soundEffect.play();
       text.innerText = "呼气!";
@@ -54,14 +61,9 @@ function breatheAnimation() {
       //audio_out.play();
       //audio_hold.currentTime = 0;
       container.className = "container shrink";
-
     }, holdTime);
-
   }, breatheTime);
-
 }
-
-
 
 function init() {
 
@@ -74,9 +76,14 @@ function init() {
       soundEffect.play(1);
       soundEffect.pause();
 
+      var duration = document.getElementById("idTimer").value*60*1000;
+      //alert(duration);
+      countDown(duration);
+      
       // Init
       breatheAnimation();
       setInterval(breatheAnimation, totalTime);
+
 
     }else{
 

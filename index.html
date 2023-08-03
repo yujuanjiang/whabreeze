@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
     <title>鲸息</title>
   </head>
+  <i class="glyphicon glyphicon-user" id="numUsers" margin-left="0em"></i>
   <body>
+
+
     <p id="text"></p>
     <p2 id="start">点击下方按钮<br>开始练习</p2>
     <div class="container" id="container">
@@ -30,7 +34,26 @@
         <span class="pointer"></span>
       </div>
       <div class="gradient-circle"></div>
+
     </div>
+
+    <div class="timerContainer" id="timerid">
+      <label for="timer">练习时长: </label>
+      <select name="timerDuration" id="idTimer" >
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
+        <option value="60">60</option>
+      </select>
+      <label for="timer"> 分钟</label>
+    </div>
+    <center>
+      <div class="myProgress" id="myProgress">
+        <div class="myBar" id="myBar"></div>
+      </div>
+    </center>
     <script src="script.js"></script>
   </body>
 </html>
