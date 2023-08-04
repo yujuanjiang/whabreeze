@@ -34,8 +34,7 @@ play.addEventListener("click", function() {
 function countDown() {
     var duration = document.getElementById("idTimer").value*60*1000;
     //alert(duration);
-    var start = Date.now();
-    //alert(start);
+    var start_time = Date.now();
     var bar = document.getElementById("idBar");
     var width = 1;
 
@@ -48,7 +47,7 @@ function countDown() {
       if (width >= 100) {
         clearInterval(id);
       } else {
-        width = ( Date.now() - start )/duration*100;
+        width = ( Date.now() - start_time )/duration*100;
         bar.style.width = width + "%";
       }
     }
