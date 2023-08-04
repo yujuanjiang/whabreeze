@@ -31,9 +31,27 @@ play.addEventListener("click", function() {
   init();
 });
 
-function countDown(duration) {
+function countDown() {
+    var duration = document.getElementById("idTimer").value*60*1000;
+    //alert(duration);
+    var start = Date.now();
+    //alert(start);
+    var bar = document.getElementById("idBar");
+    var width = 1;
+
     setInterval(() => { window.location.reload(); }, duration);
     document.getElementById("idTimer").disabled=true;
+
+    //progress bar
+    var id = setInterval(frame, 1000);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width = ( Date.now() - start )/duration*100;
+        bar.style.width = width + "%";
+      }
+    }
 }
 
 function breatheAnimation() {
@@ -80,9 +98,7 @@ function init() {
       soundEffect.play(1);
       soundEffect.pause();
 
-      var duration = document.getElementById("idTimer").value*60*1000;
-      //alert(duration);
-      countDown(duration);
+      countDown();
 
       // Init
       breatheAnimation();

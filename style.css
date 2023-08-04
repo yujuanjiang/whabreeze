@@ -47,14 +47,12 @@ p {
 .myProgress {
   width: 100%;
   background-color: #ddd;
-  margin-bottom: 2em;
 }
 
 .myBar {
   width: 1%;
   height: 10px;
   background-color: #04AA6D;
-  margin-bottom: 2em;
 }
 
 p2 {
