@@ -41,7 +41,7 @@ p {
 
 .timerContainer {
   font-size: 0.9rem;
-  bottom: 1em;
+  margin-bottom: 3em;
 }
 
 .myProgress {
@@ -51,7 +51,7 @@ p {
 
 .myBar {
   width: 1%;
-  height: 10px;
+  height: 1.5em;
   background-color: #04AA6D;
 }
 
