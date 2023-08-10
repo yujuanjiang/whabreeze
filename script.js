@@ -105,7 +105,6 @@ function init() {
 
 
     }else{
-
         window.location.reload(); // Refresh the entire page
         // container.style.animation = 'none';
         start.innerText = "点击下方按钮<br>开始练习";
