@@ -27,7 +27,7 @@ pointer.style.animationPlayState = 'paused';
 
 const play = document.querySelector(".play");
 play.addEventListener("click", function() {
-  start.innerText = "";
+  //start.innerText = "";
   init();
 });
 
@@ -62,14 +62,14 @@ function breatheAnimation() {
   //audio_out.currentTime = 0;
   soundEffect.src = "./static/breathin.mp3";
   soundEffect.play();
-  text.innerText = "吸气!";
+  start.innerText = "吸气!";
   container.className = "container grow";
 
   window.setTimeout(() => {
 
     soundEffect.src = "./static/hold.mp3";
     soundEffect.play();
-    text.innerText = "屏住呼吸";
+    start.innerText = "屏住呼吸";
     //audio_hold.muted = false;
     //audio_hold.play();
     //audio_in.currentTime = 0;
@@ -77,7 +77,7 @@ function breatheAnimation() {
     window.setTimeout(() => {
       soundEffect.src = "./static/breathout.mp3";
       soundEffect.play();
-      text.innerText = "呼气!";
+      start.innerText = "呼气!";
       //audio_out.muted = false;
       //audio_out.play();
       //audio_hold.currentTime = 0;
